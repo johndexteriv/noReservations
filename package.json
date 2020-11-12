@@ -1,0 +1,24 @@
+{
+  "name": "noreservations",
+  "version": "1.0.0",
+  "description": "express js application that allows users to make reservations or join a waitlist at a restaurant",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johndexteriv/noReservations.git"
+  },
+  "author": "Dexter Garner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johndexteriv/noReservations/issues"
+  },
+  "homepage": "https://github.com/johndexteriv/noReservations#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}
