@@ -79,9 +79,51 @@
             console.log("-------------------------------");
             console.log(tableData);
             console.log("----------------------------------");
+
+            for (var i = 0; i < tableData.length; i ++){
+                console.log(tableData[i]);
+
+                var tableSection = $('<div>');
+                tableSection.addClass('well');
+                tableSection.attr('id', 'tableWell-' + i+1);
+                $('#tableSection').append(tableSection)
+
+                var tableNumber = i + 1;
+
+                $("#tableWell-" + i + 1).append('<h2><span class="label label-primary">' + tableNumber + "</span> | " + tableData[i].customerId + "</h2>");
+            }
         });
     }
-    runTableQuery();
+
+    function runWaitListQuery() {
+            var currentURL = window.location.origin;
+
+            $.ajax({ url: currentURL + "/api/waitlist", method: "GET" })
+
+                .done(function (waitingListData) {
+
+                    console.log("-------------------------------");
+                    console.log("URL: " + currentURL + "/api/waitlist");
+                    console.log("-------------------------------");
+                    console.log(waitingListData);
+                    console.log("----------------------------------");
+
+                    for (var i = 0; i < waitingListData.length; i++) {
+                        console.log(waitingListData[i]);
+
+                        var waitlistSection = $('<div>');
+                        waitlistSection.addClass('well');
+                        waitlistSection.attr('id', 'waitlistWell-' + i + 1);
+                        $('#waitlistSection').append(waitlistSection)
+
+                        var tableNumber = i + 1;
+
+                        $("#waitlistWell-" + i + 1).append('<h2><span class="label label-primary">' + tableNumber + "</span> | " + waitingListData[i].customerId + "</h2>");
+                    }
+                });
+        }
+        runTableQuery();
+        runWaitListQuery();
 
 </script>
 
