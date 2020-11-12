@@ -20,6 +20,8 @@ app.use(function (req, res) {
 	res.end(JSON.stringify(req.body, null, 2));
 });
 
+require("./app/routing/html-routes.js")(app);
+
 app.listen(PORT, function () {
 	console.log("APP LISTENING ON PORT: " + PORT);
 });
