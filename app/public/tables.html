@@ -65,5 +65,24 @@
     </div>
 
 </body>
+<script type="text/javascript">
+
+    function runTableQuery () {
+        var currentURL = window.location.origin;
+
+        $.ajax({url: currentURL + "/api/tables", method: "GET"})
+
+            .done(function(tableData){
+
+            console.log("-------------------------------");
+            console.log("URL: " + currentURL + "/api/tables");
+            console.log("-------------------------------");
+            console.log(tableData);
+            console.log("----------------------------------");
+        });
+    }
+    runTableQuery();
+
+</script>
 
 </html>

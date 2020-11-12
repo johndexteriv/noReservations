@@ -3,6 +3,9 @@ var waitingListData = require("../data/waitinglist-data.js");
 
 module.exports = function (app) {
 	app.get("/api/tables", function (req, res) {
-		rest.json(tableData);
+		res.json(tableData);
+	});
+	app.get("/api/waitlist", function (req, res) {
+		res.json(waitingListData);
 	});
 };
