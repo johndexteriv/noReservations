@@ -96,9 +96,9 @@
     }
 
     function runWaitListQuery() {
-            var currentURL = window.location.origin;
+         var currentURL = window.location.origin;
 
-            $.ajax({ url: currentURL + "/api/waitlist", method: "GET" })
+             $.ajax({ url: currentURL + "/api/waitlist", method: "GET" })
 
                 .done(function (waitingListData) {
 
@@ -119,12 +119,24 @@
                         var tableNumber = i + 1;
 
                         $("#waitlistWell-" + i + 1).append('<h2><span class="label label-primary">' + tableNumber + "</span> | " + waitingListData[i].customerId + "</h2>");
-                    }
+                    };
                 });
-        }
-        runTableQuery();
-        runWaitListQuery();
+    };
+    
+    function clearTable() {
+        var currentURL = window.location.origin;
+        $.ajax ({url: currentURL + "/api/clear", method: "POST"})
+    }
 
+    $("#clear").on("click", function(){
+        alert('Clearing...');
+        clearTable();
+        location.reload();
+    })
+    runTableQuery();
+    runWaitListQuery();
+
+    
 </script>
 
 </html>

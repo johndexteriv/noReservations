@@ -17,4 +17,8 @@ module.exports = function (app) {
 			res.json(false);
 		}
 	});
+	app.post("/api/clear", function () {
+		tableData = [];
+		waitingListData = [];
+	});
 };
